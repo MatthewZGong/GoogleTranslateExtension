@@ -1,5 +1,5 @@
 {
-  "name": "contextMenusTest",
+  "name": "GoogleTranslateExtension",
   "version": "1.0",
   "description": "Build an Extension!",
   "permissions": ["contextMenus","storage","notifications"],

@@ -32,27 +32,27 @@ $(function(){
     // }
     $("#Chinese").click(function(){
         $("#what").text("Chinese")
-        chrome.storage.sync.set({"Language To": "Chinese"},function(){})
+        chrome.storage.sync.set({"LanguageTo": "Chinese"},function(){})
     })
     $("#English").click(function(){
         $("#what").text("English")
-        chrome.storage.sync.set({"Language To": "English"},function(){})
+        chrome.storage.sync.set({"LanguageTo": "English"},function(){})
     })
     $("#French").click(function(){
         $("#what").text("French")
-        chrome.storage.sync.set({"Language To": "French"},function(){})
+        chrome.storage.sync.set({"LanguageTo": "French"},function(){})
     })
     $("#Japanese").click(function(){
         $("#what").text("Japanese")
-        chrome.storage.sync.set({"Language To": "Japanese"},function(){})
+        chrome.storage.sync.set({"LanguageTo": "Japanese"},function(){})
     })
     $("#Russian").click(function(){
         $("#what").text("Russian")
-        chrome.storage.sync.set({"Language To": "Russian"},function(){})
+        chrome.storage.sync.set({"LanguageTo": "Russian"},function(){})
     })
     $("#Spanish").click(function(){
         $("#what").text("Spanish")
-        chrome.storage.sync.set({"Language To": "Spanish"},function(){})
+        chrome.storage.sync.set({"LanguageTo": "Spanish"},function(){})
     })
 })
     // <button type="button" id="Chinese">Chinese</button>
