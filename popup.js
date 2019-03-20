@@ -65,11 +65,12 @@ languageHashtable['Russian'] = 'RU'
 languageHashtable['Spanish'] = 'ES'
 function trans(language){
     var url = "https://translation.googleapis.com/language/translate/v2?key=AIzaSyCm-fXGpNvdMP--YrP4HVW89ImOSMfNEik";
-    // url += "&source=" + 'detect';
+    // url += "&source=" + 'ZH';
     // chrome.storage.sync.get(["Translation","LanguageTo"], function(input){
-        url += "&target=" + languageHashtable[language];
+    url += "&target=" + languageHashtable[language];
     // })
-    url += "&q=" + escape($('#userInput').val());
+    url += "&q=" + $('#userInput').val();
+    // chrome.tabs.create({ url: url })
     $.get(url, function (data, status) {
         $("#Translation").text("Translation: "+data.data.translations[0].translatedText);
     });
@@ -106,6 +107,7 @@ $(function(){
         // $("#Translation").text("Translation: "+holderList[holderList.length-1].getText())
         $('#userInput').val(holderList[holderList.length-1].getText())
         chrome.storage.sync.set({"Translation": $("#userInput").val()},function(){})
+        $("#what").text(holderList[holderList.length-1].getLanguage())
         chrome.storage.sync.set({"LanguageTo": holderList[holderList.length-1].getLanguage()},function(){})
         trans(holderList[holderList.length-1].getLanguage());
     })
@@ -164,6 +166,18 @@ $(function(){
           $("#what").text("Spanish")
           chrome.storage.sync.set({"LanguageTo": "Spanish"},function(){})
           trans("Spanish")
+      })
+      $("#search").click(function(){
+        if($("#Translation").text() != "Translation: "){
+            chrome.storage.sync.get(["search"], function(input){
+                var newURL = "https://www.google.com/search?q=";
+                var h = " "+input.search +" "
+                newURL += $("#Translation").text().substring(12)
+                newURL += h
+                  chrome.tabs.create({ url: newURL })
+            })
+        // $("#userInput").val()
+        }
       })
 })
 
