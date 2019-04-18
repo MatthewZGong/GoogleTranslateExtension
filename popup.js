@@ -64,7 +64,7 @@ languageHashtable['Japanese'] = 'JA'
 languageHashtable['Russian'] = 'RU'
 languageHashtable['Spanish'] = 'ES'
 function trans(language){
-    var url = "https://translation.googleapis.com/language/translate/v2?key=AIzaSyCm-fXGpNvdMP--YrP4HVW89ImOSMfNEik";
+    var url = "https://translation.googleapis.com/language/translate/v2?key=";
     // url += "&source=" + 'ZH';
     // chrome.storage.sync.get(["Translation","LanguageTo"], function(input){
     url += "&target=" + languageHashtable[language];
