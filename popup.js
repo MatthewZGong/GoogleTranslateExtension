@@ -1,4 +1,4 @@
-const apiKey = "AIzaSyCm-fXGpNvdMP--YrP4HVW89ImOSMfNEik";
+const apiKey = "";
 // // Set endpoints
 // const endpoints = {
 //   translate: "",
@@ -107,7 +107,7 @@ $(function(){
         // $("#Translation").text("Translation: "+holderList[holderList.length-1].getText())
         $('#userInput').val(holderList[holderList.length-1].getText())
         chrome.storage.sync.set({"Translation": $("#userInput").val()},function(){})
-        $("#what").text(holderList[holderList.length-1].getLanguage())
+        $("#what").text(holderList[holderList.length-1].getLanguage()   )
         chrome.storage.sync.set({"LanguageTo": holderList[holderList.length-1].getLanguage()},function(){})
         trans(holderList[holderList.length-1].getLanguage());
     })
