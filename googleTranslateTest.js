@@ -23,7 +23,7 @@ async function quickstart(input,
   console.log(quickstart("hello"));
 // Enter an API key from the Google API Console:
 //   https://console.developers.google.com/apis/credentials
-const apiKey = "AIzaSyCm-fXGpNvdMP--YrP4HVW89ImOSMfNEik";
+const apiKey = "";
 
 // Set endpoints
 const endpoints = {
